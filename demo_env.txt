@@ -1,0 +1,21 @@
+# MongoDB URL
+MONGODB_URI ="mongoDBURL"
+
+# JWT_SECRET
+JWT_SECRET = "your-jwt-secret"
+
+# Clodinary Config
+cloud_name = ''
+api_key = ''
+api_secret = ''
+
+# Email Service for Forgot Password.
+service = ''
+user = ""
+pass = ""
+
+
+# Firebase Configuration for Adding Google Auth.
+project_id=""
+private_key=""
+client_email = ""
