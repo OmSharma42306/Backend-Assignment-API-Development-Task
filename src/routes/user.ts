@@ -248,6 +248,7 @@ router.post('/api/auth/google',async(req:Request,res:Response)=>{
                 email:email
             })
             await googleUser.save();
+            console.log("Created googleUser!")
         }
 
         // sending message authenticated with token by googleAuth
