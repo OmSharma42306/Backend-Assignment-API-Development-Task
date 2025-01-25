@@ -210,8 +210,10 @@ try{
         return res.status(401).json({msg:"User not Found!"})
     }
     console.log("user " ,user)
+    // hashing the password , so after decrypting at loginpage,if not hashed password here,at login time that will throw error!
+    const hashedPassword = await bcrypt.hash(password,10);
     // setting the database password with given password by user from body.
-    user.password = password;
+    user.password = hashedPassword;
     await user.save();
     console.log("after updating the user:,",user)
     // sending message that password reset successfully!
