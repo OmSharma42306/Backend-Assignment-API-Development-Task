@@ -4,7 +4,7 @@ from db import models
 from db.database import get_db
 from schemas.wheel import WheelFormCreate
 
-router = APIRouter(prefix="/f",tags=["Forms"])
+router = APIRouter(prefix="/api",tags=["Forms"])
 
 
 @router.post("/forms/wheel-specifications", status_code=201)

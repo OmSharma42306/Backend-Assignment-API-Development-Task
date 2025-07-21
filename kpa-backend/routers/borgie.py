@@ -4,7 +4,7 @@ from db import models
 from db.database import get_db
 from schemas.bogie import BogieFormCreate
 
-router = APIRouter(prefix="/f",tags=["Forms"])
+router = APIRouter(prefix="/api",tags=["Forms"])
 
 @router.post("/forms/bogie-checksheet", status_code=201)
 def create_bogie_form(form: BogieFormCreate, db: Session = Depends(get_db)):
