@@ -29,30 +29,3 @@ def create_bogie_form(form: BogieFormCreate, db: Session = Depends(get_db)):
             "status": "Saved"
         }
     }
-
-
-@router.get("/forms/wheel-specifications")
-def get_wheel_form(
-    formNumber: str = Query(...),
-    submittedBy: str = Query(...),
-    submittedDate: str = Query(...),
-    db: Session = Depends(get_db)
-):
-    form = db.query(models.WheelSpecificationForm).filter(
-        models.WheelSpecificationForm.form_number == formNumber,
-        models.WheelSpecificationForm.submitted_by == submittedBy,
-        models.WheelSpecificationForm.submitted_date == submittedDate
-    ).first()
-
-    if not form:
-        raise HTTPException(status_code=404, detail="Wheel form not found.")
-
-    return {
-        "success": True,
-        "data": {
-            "formNumber": form.form_number,
-            "submittedBy": form.submitted_by,
-            "submittedDate": form.submitted_date,
-            "fields": form.fields
-        }
-    }
