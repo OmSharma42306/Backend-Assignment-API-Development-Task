@@ -78,3 +78,15 @@ This is a backend service for managing form submissions such as **Wheel Specific
     
     ```
     docker run -p 8000:8000 -e DB_URL="" kpa-backend-app
+
+
+# Flutter App Setup
+
+1. ```
+    cd KPA-ERP-FE
+
+2. ```
+    flutter pub get
+
+3. ```
+    flutter run
